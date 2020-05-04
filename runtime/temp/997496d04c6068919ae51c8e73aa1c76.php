@@ -1,7 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\admin\lst.html";i:1588576108;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588575675;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\admin\lst.html";i:1588601753;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588575675;}*/ ?>
 <!DOCTYPE html>
-<html><head>
-	    <meta charset="utf-8">
+<html>
+
+<head>
+    <meta charset="utf-8">
     <title>童老师ThinkPHP交流群：484519446</title>
 
     <meta name="description" content="Dashboard">
@@ -18,10 +20,11 @@
     <link href="http://localhost/tp5/public/static/admin/style/demo.css" rel="stylesheet">
     <link href="http://localhost/tp5/public/static/admin/style/typicons.css" rel="stylesheet">
     <link href="http://localhost/tp5/public/static/admin/style/animate.css" rel="stylesheet">
-    
+
 </head>
+
 <body>
-	<!-- 头部 -->
+    <!-- 头部 -->
     <div class="navbar">
     <div class="navbar-inner">
         <div class="navbar-container">
@@ -81,12 +84,12 @@
 </div>
 
 
-	<!-- /头部 -->
-	
-	<div class="main-container container-fluid">
-		<div class="page-container">
-			            <!-- Page Sidebar -->
-                        <div class="page-sidebar" id="sidebar">
+    <!-- /头部 -->
+
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
     <!-- Page Sidebar Header-->
     <div class="sidebar-header-wrapper">
         <input class="searchinput" type="text">
@@ -158,93 +161,82 @@
                 <!-- Page Breadcrumb -->
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
-                                        <li>
-                        <a href="#">系统</a>
-                    </li>
-                                        <li class="active">管理员管理</li>
-                                        </ul>
+                        <li>
+                            <a href="#">系统</a>
+                        </li>
+                        <li class="active">管理员管理</li>
+                    </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
 
                 <!-- Page Body -->
                 <div class="page-body">
-                    
-<button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '<?php echo url('admin/add'); ?>'"> <i class="fa fa-plus"></i> Add
-</button>
-<div class="row">
-    <div class="col-lg-12 col-sm-12 col-xs-12">
-        <div class="widget">
-            <div class="widget-body">
-                <div class="flip-scroll">
-                    <table class="table table-bordered table-hover">
-                        <thead class="">
-                            <tr>
-                                <th class="text-center">ID</th>
-                                <th class="text-center">管理员名称</th>
-                                <th class="text-center">操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                                        <tr>
-                                <td align="center">6</td>
-                                <td align="center">test</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/6.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">7</td>
-                                <td align="center">aaaaaa</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/7.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/7.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                        <tr>
-                                <td align="center">8</td>
-                                <td align="center">bbb</td>
-                                <td align="center">
-                                    <a href="/admin/user/edit/id/8.html" class="btn btn-primary btn-sm shiny">
-                                        <i class="fa fa-edit"></i> 编辑
-                                    </a>
-                                    <a href="#" onClick="warning('确实要删除吗', '/admin/user/del/id/8.html')" class="btn btn-danger btn-sm shiny">
-                                        <i class="fa fa-trash-o"></i> 删除
-                                    </a>
-                                </td>
-                            </tr>
-                                                    </tbody>
-                    </table>
-                </div>
-                <div>
-                	                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+                    <button type="button" tooltip="添加用户" class="btn btn-sm btn-azure btn-addon"
+                        onClick="javascript:window.location.href = '<?php echo url('admin/add'); ?>'"> <i class="fa fa-plus"></i>
+                        Add
+                    </button>
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-12 col-xs-12">
+                            <div class="widget">
+                                <div class="widget-body">
+                                    <div class="flip-scroll">
+                                        <table class="table table-bordered table-hover">
+                                            <thead class="">
+                                                <tr>
+                                                    <th class="text-center">ID</th>
+                                                    <th class="text-center">管理员名称</th>
+                                                    <th class="text-center">操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                                <tr>
+                                                    <td align="center" width="8%"><?php echo $vo['id']; ?></td>
+                                                    <td align="center"><?php echo $vo['username']; ?></td>
+                                                    <td align="center" width="28%">
+                                                        <a href="/admin/user/edit/id/6.html"
+                                                            class="btn btn-primary btn-sm shiny">
+                                                            <i class="fa fa-edit"></i> 编辑
+                                                        </a>
+                                                        <a href="#"
+                                                            onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')"
+                                                            class="btn btn-danger btn-sm shiny">
+                                                            <i class="fa fa-trash-o"></i> 删除
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                                <?php endforeach; endif; else: echo "" ;endif; ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <?php echo $list->render(); ?>
+                                    </div>
+                                </div>
+                                <?php echo $list->render(); ?>
+                            </div>
+                            <?php echo $list->render(); ?>
+                        </div>
+                        <?php echo $list->render(); ?>
+                    </div>
 
                 </div>
                 <!-- /Page Body -->
             </div>
             <!-- /Page Content -->
-		</div>	
-	</div>
+        </div>
+    </div>
 
-	    <!--Basic Scripts-->
+    <!--Basic Scripts-->
     <script src="http://localhost/tp5/public/static/admin/style/jquery_002.js"></script>
     <script src="http://localhost/tp5/public/static/admin/style/bootstrap.js"></script>
     <script src="http://localhost/tp5/public/static/admin/style/jquery.js"></script>
     <!--Beyond Scripts-->
     <script src="http://localhost/tp5/public/static/admin/style/beyond.js"></script>
-    
 
 
-</body></html>
+
+</body>
+
+</html>
