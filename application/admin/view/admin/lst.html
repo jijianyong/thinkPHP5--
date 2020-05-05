@@ -73,12 +73,12 @@
                                                     <td align="center" width="8%">{$vo.id}</td>
                                                     <td align="center">{$vo.username}</td>
                                                     <td align="center" width="28%">
-                                                        <a href="/admin/user/edit/id/6.html"
+                                                        <a href="{:url('admin/edit',array('id'=>$vo['id']))}"
                                                             class="btn btn-primary btn-sm shiny">
                                                             <i class="fa fa-edit"></i> 编辑
                                                         </a>
                                                         <a href="#"
-                                                            onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')"
+                                                            onClick="warning('确实要删除吗', '{:url('admin/del',array('id'=>$vo['id']))}')"
                                                             class="btn btn-danger btn-sm shiny">
                                                             <i class="fa fa-trash-o"></i> 删除
                                                         </a>
@@ -89,7 +89,9 @@
                                         </table>
                                     </div>
                                     <div>
-                                        {$list->render()}
+                                        <div style="margin-top: 10px;">
+                                            {$list->render()}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -16,7 +16,8 @@ class Admin extends Validate
     ];
 
     protected $scene = [
-        'add' => ['username','password']
+        'add' => ['username','password'],
+        'edit' => ['username']
     ];  
         
 }

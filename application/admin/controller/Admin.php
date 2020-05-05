@@ -13,6 +13,39 @@ class Admin extends Controller
         $this->assign('list',$list);
         return $this->fetch();
     }
+
+    public function edit()
+    {
+        $id = input('id');
+        $admins = db('admin')->find($id);
+
+        if(request()->isPost()){
+            $data = [
+                'id'=>input('id'),
+                'username'=>input('username')
+            ];
+            if(input('password')){
+                $data['password']=md5(input('password'));
+            }else{
+                $data['password']=$admins['password'];
+            }
+            $validate = Loader::validate('Admin');
+            if(!$validate->scene('edit')->check($data)){
+                $this->error($validate->getError());
+                die;
+            }
+            if(db('admin')->update($data)){
+                $this->success('修改信息成功！','lst');
+            }else{
+                $this->error('修改信息失败！');
+            }
+            return;
+        }
+
+        $this->assign('admins',$admins);
+        return $this->fetch();
+    }
+
     public function add()
     {
         if(request()->isPost()){
