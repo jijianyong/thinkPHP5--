@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\admin\add.html";i:1588576322;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\links\lst.html";i:1588775798;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -9,20 +9,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--Basic Styles-->
-    <link href="http://localhost/tp5/public/static/admin/style/bootstrap.css" rel="stylesheet">
-    <link href="http://localhost/tp5/public/static/admin/style/font-awesome.css" rel="stylesheet">
-    <link href="http://localhost/tp5/public/static/admin/style/weather-icons.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin
+/style/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin
+/style/font-awesome.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin
+/style/weather-icons.css" rel="stylesheet">
 
     <!--Beyond styles-->
-    <link id="beyond-link" href="http://localhost/tp5/public/static/admin/style/beyond.css" rel="stylesheet" type="text/css">
-    <link href="http://localhost/tp5/public/static/admin/style/demo.css" rel="stylesheet">
-    <link href="http://localhost/tp5/public/static/admin/style/typicons.css" rel="stylesheet">
-    <link href="http://localhost/tp5/public/static/admin/style/animate.css" rel="stylesheet">
+    <link id="beyond-link" href="http://localhost/tp5/public/static/admin
+/style/beyond.css" rel="stylesheet" type="text/css">
+    <link href="http://localhost/tp5/public/static/admin
+/style/demo.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin
+/style/typicons.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin
+/style/animate.css" rel="stylesheet">
     
 </head>
 <body>
 	<!-- 头部 -->
-    <div class="navbar">
+	<div class="navbar">
     <div class="navbar-inner">
         <div class="navbar-container">
             <!-- Navbar Barnd -->
@@ -79,14 +86,12 @@
         </div>
     </div>
 </div>
-
-
 	<!-- /头部 -->
 	
 	<div class="main-container container-fluid">
 		<div class="page-container">
 			            <!-- Page Sidebar -->
-                        <div class="page-sidebar" id="sidebar">
+            <div class="page-sidebar" id="sidebar">
     <!-- Page Sidebar Header-->
     <div class="sidebar-header-wrapper">
         <input class="searchinput" type="text">
@@ -195,10 +200,7 @@
                                         <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li>
-                        <a href=<?php echo url('admin/lst'); ?>>管理员管理</a>
-                    </li>
-                                        <li class="active">添加管理员</li>
+                                        <li class="active">链接管理</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -206,37 +208,51 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
+<button type="button" tooltip="添加链接" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '<?php echo url('links/add'); ?>'"> <i class="fa fa-plus"></i> Add
+</button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
-            <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">新增管理员</span>
-            </div>
             <div class="widget-body">
-                <div id="horizontal-form">
-                    <form class="form-horizontal" role="form" action="" method="post">
-                        <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label no-padding-right">管理员名</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" id="username" placeholder="" name="username" required="" type="text">
-                            </div>
-                            <p class="help-block col-sm-4 red">* 必填</p>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">管理员角色</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" id="password" placeholder="" name="password" required="" type="text">
-                            </div>
-                            <p class="help-block col-sm-4 red">* 必填</p>
-                        </div>  
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">保存信息</button>
-                            </div>
-                        </div>
-                    </form>
+                <div class="flip-scroll">
+                    <table class="table table-bordered table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="text-center" width="4%">ID</th>
+                                <th class="text-center">链接名称</th>
+                                <th class="text-center">链接地址</th>
+                                <th class="text-center">链接描述</th>
+                                <th class="text-center" width="14%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <tr>
+                                <td align="center"><?php echo $vo['id']; ?></td>
+                                <td align="center"><?php echo $vo['title']; ?></td>
+                                <td align="center"><a href="<?php echo $vo['url']; ?>" target="_blank"><?php echo $vo['url']; ?></a></td>
+                                <td align="center">
+                                    <?php if($vo['desc'] != ''): ?>
+                                    <?php echo $vo['desc']; else: ?>
+                                    暂无描述
+                                    <?php endif; ?>
+                                </td>
+                                <td align="center">
+                                    <a href="<?php echo url('links/edit',array('id'=>$vo['id'])); ?>" class="btn btn-primary btn-sm shiny">
+                                        <i class="fa fa-edit"></i> 编辑
+                                    </a>
+                                    <a href="#" onClick="warning('确实要删除吗', '<?php echo url('links/del',array('id'=>$vo['id'])); ?>')" class="btn btn-danger btn-sm shiny">
+                                        <i class="fa fa-trash-o"></i> 删除
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </tbody>
+                    </table>
                 </div>
+                <div style="text-align:right; margin-top:10px;">
+                <?php echo $list->render(); ?>
+                	                </div>
             </div>
         </div>
     </div>
@@ -250,11 +266,15 @@
 	</div>
 
 	    <!--Basic Scripts-->
-    <script src="http://localhost/tp5/public/static/admin/style/jquery_002.js"></script>
-    <script src="http://localhost/tp5/public/static/admin/style/bootstrap.js"></script>
-    <script src="http://localhost/tp5/public/static/admin/style/jquery.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/jquery_002.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/bootstrap.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/jquery.js"></script>
     <!--Beyond Scripts-->
-    <script src="http://localhost/tp5/public/static/admin/style/beyond.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/beyond.js"></script>
     
 
 

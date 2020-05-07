@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:73:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\index\index.html";i:1588575739;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588575675;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\cate\add.html";i:1588858634;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -21,7 +21,6 @@
     
 </head>
 <body>
-    
 	<!-- 头部 -->
     <div class="navbar">
     <div class="navbar-inner">
@@ -81,12 +80,13 @@
     </div>
 </div>
 
+
 	<!-- /头部 -->
 	
 	<div class="main-container container-fluid">
 		<div class="page-container">
 			            <!-- Page Sidebar -->
-            <div class="page-sidebar" id="sidebar">
+                        <div class="page-sidebar" id="sidebar">
     <!-- Page Sidebar Header-->
     <div class="sidebar-header-wrapper">
         <input class="searchinput" type="text">
@@ -133,6 +133,40 @@
 
         <li>
             <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text">栏目管理</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('Cate/lst'); ?>">
+                        <span class="menu-text">
+                            栏目列表                                   </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>                            
+        </li> 
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-link"></i>
+                <span class="menu-text">友情链接</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('links/lst'); ?>">
+                        <span class="menu-text">
+                            友情列表                                   </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>                            
+        </li> 
+
+        <li>
+            <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-gear"></i>
                 <span class="menu-text">系统</span>
                 <i class="menu-expand"></i>
@@ -158,7 +192,13 @@
                 <!-- Page Breadcrumb -->
                 <div class="page-breadcrumbs">
                     <ul class="breadcrumb">
-                                        <li class="active">控制面板</li>
+                                        <li>
+                        <a href="#">系统</a>
+                    </li>
+                                        <li>
+                        <a href=<?php echo url('cate/lst'); ?>>栏目管理</a>
+                    </li>
+                                        <li class="active">添加栏目</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -166,11 +206,34 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
-				<div style="text-align:center; line-height:1000%; font-size:24px;">
-                童老师THinkPHP5.0正式版 第一季 博客项目开发<br>
-                <p style="color:#aaa;">ThinkPHP交流群①：484519446【满】 | 群②：480018415【满】  | 群③：198909858</p></div>
+<div class="row">
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <div class="widget">
+            <div class="widget-header bordered-bottom bordered-blue">
+                <span class="widget-caption">新增栏目</span>
+            </div>
+            <div class="widget-body">
+                <div id="horizontal-form">
+                    <form class="form-horizontal" role="form" action="" method="post">
+                        <div class="form-group">
+                            <label for="username" class="col-sm-2 control-label no-padding-right">栏目名</label>
+                            <div class="col-sm-6">
+                                <input class="form-control" id="catename" placeholder="" name="catename" required="" type="text">
+                            </div>
+                            <p class="help-block col-sm-4 red">* 必填</p>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-default">保存信息</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                
+            </div>
+        </div>
+    </div>
+</div>
 
                 </div>
                 <!-- /Page Body -->

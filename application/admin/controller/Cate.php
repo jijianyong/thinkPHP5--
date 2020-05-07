@@ -1,15 +1,15 @@
 <?php
-namespace app\admin\controller;
+namespace app\admin\Controller;
 use think\Controller;
 use think\Db;
 use think\Loader;
-use app\admin\model\Admin as AdminModel;
+use app\admin\model\Cate as CateModel;
 
-class Admin extends Controller
+class Cate extends Controller
 {
     public function lst()
     {
-        $list = AdminModel::paginate(10);
+        $list = CateModel::paginate(10);
         $this->assign('list',$list);
         return $this->fetch();
     }
@@ -17,24 +17,19 @@ class Admin extends Controller
     public function edit()
     {
         $id = input('id');
-        $admins = db('admin')->find($id);
+        $Cates = db('cate')->find($id);
 
         if(request()->isPost()){
             $data = [
                 'id'=>input('id'),
-                'username'=>input('username')
+                'catename'=>input('catename')
             ];
-            if(input('password')){
-                $data['password']=md5(input('password'));
-            }else{
-                $data['password']=$admins['password'];
-            }
-            $validate = Loader::validate('Admin');
+            $validate = Loader::validate('Cate');
             if(!$validate->scene('edit')->check($data)){
                 $this->error($validate->getError());
                 die;
             }
-            if(db('admin')->update($data)){
+            if(db('cate')->update($data)){
                 $this->success('修改信息成功！','lst');
             }else{
                 $this->error('修改信息失败！');
@@ -42,7 +37,7 @@ class Admin extends Controller
             return;
         }
 
-        $this->assign('admins',$admins);
+        $this->assign('Cates',$Cates);
         return $this->fetch();
     }
 
@@ -50,18 +45,17 @@ class Admin extends Controller
     {
         if(request()->isPost()){
             $data=[
-                'username'=>input('username'),
-                'password'=>md5(input('password'))
+                'catename'=>input('catename')
             ];
-            $validate = Loader::validate('Admin');
+            $validate = Loader::validate('Cate');
             if(!$validate->scene('add')->check($data)){
                 $this->error($validate->getError());
                 die;
             }
-            if(Db::name('admin')->insert($data)){
-                return $this->success('添加管理员成功！','lst');
+            if(Db::name('cate')->insert($data)){
+                return $this->success('添加栏目成功！','lst');
             }else{
-                return $this->error('添加管理员失败！');
+                return $this->error('添加栏目失败！');
             }
             return;
         }
@@ -71,15 +65,11 @@ class Admin extends Controller
     public function del()
     {
         $id = input('id');
-        if($id != 2){
-            if(db('admin')->delete($id)){
+            if(db('cate')->delete($id)){
                 $this->success('删除成功','lst'); 
             }else{
                 $this->error('删除失败');
             }
-        }else{
-            $this->error('初始化管理员不能删除');
-        }
     }
 }
 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\admin\add.html";i:1588576322;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\links\add.html";i:1588857207;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588857894;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -22,7 +22,7 @@
 </head>
 <body>
 	<!-- 头部 -->
-    <div class="navbar">
+	<div class="navbar">
     <div class="navbar-inner">
         <div class="navbar-container">
             <!-- Navbar Barnd -->
@@ -80,13 +80,12 @@
     </div>
 </div>
 
-
 	<!-- /头部 -->
 	
 	<div class="main-container container-fluid">
 		<div class="page-container">
 			            <!-- Page Sidebar -->
-                        <div class="page-sidebar" id="sidebar">
+            <div class="page-sidebar" id="sidebar">
     <!-- Page Sidebar Header-->
     <div class="sidebar-header-wrapper">
         <input class="searchinput" type="text">
@@ -133,8 +132,8 @@
 
         <li>
             <a href="#" class="menu-dropdown">
-                <i class="menu-icon fa fa-list"></i>
-                <span class="menu-text">栏目管理</span>
+                <i class="menu-icon fa fa-link"></i>
+                <span class="menu-text">文章栏目</span>
                 <i class="menu-expand"></i>
             </a>
             <ul class="submenu">
@@ -196,9 +195,9 @@
                         <a href="#">系统</a>
                     </li>
                                         <li>
-                        <a href=<?php echo url('admin/lst'); ?>>管理员管理</a>
+                        <a href="<?php echo url('links/lst'); ?>">链接管理</a>
                     </li>
-                                        <li class="active">添加管理员</li>
+                                        <li class="active">添加链接</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -210,26 +209,32 @@
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">新增管理员</span>
+                <span class="widget-caption">新增链接</span>
             </div>
             <div class="widget-body">
                 <div id="horizontal-form">
                     <form class="form-horizontal" role="form" action="" method="post">
                         <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label no-padding-right">管理员名</label>
+                            <label for="username" class="col-sm-2 control-label no-padding-right">链接标题</label>
                             <div class="col-sm-6">
-                                <input class="form-control" id="username" placeholder="" name="username" required="" type="text">
+                                <input class="form-control" id="title" placeholder="" name="title"  type="text">
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
 
                         <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">管理员角色</label>
+                            <label for="group_id" class="col-sm-2 control-label no-padding-right">链接地址</label>
                             <div class="col-sm-6">
-                                <input class="form-control" id="password" placeholder="" name="password" required="" type="text">
+                                <input class="form-control" id="url" placeholder="" name="url"  type="text">
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>  
+                        <div class="form-group">
+                            <label for="group_id" class="col-sm-2 control-label no-padding-right">链接描述</label>
+                            <div class="col-sm-6">
+                                <textarea name="desc" class="form-control"></textarea>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default">保存信息</button>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\admin\add.html";i:1588576322;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\cate\edit.html";i:1588859492;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -196,9 +196,9 @@
                         <a href="#">系统</a>
                     </li>
                                         <li>
-                        <a href=<?php echo url('admin/lst'); ?>>管理员管理</a>
+                        <a href=<?php echo url('cate/lst'); ?>>栏目管理</a>
                     </li>
-                                        <li class="active">添加管理员</li>
+                                        <li class="active">修改栏目</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -210,26 +210,20 @@
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
             <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">新增管理员</span>
+                <span class="widget-caption">修改栏目</span>
             </div>
             <div class="widget-body">
                 <div id="horizontal-form">
                     <form class="form-horizontal" role="form" action="" method="post">
+                        <input type="hidden" name="id" value="<?php echo $Cates['id']; ?>">
                         <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label no-padding-right">管理员名</label>
+                            <label for="catename" class="col-sm-2 control-label no-padding-right">栏目名</label>
                             <div class="col-sm-6">
-                                <input class="form-control" id="username" placeholder="" name="username" required="" type="text">
+                                <input class="form-control" id="catename" placeholder="" name="catename" value="<?php echo $Cates['catename']; ?>" required="" type="text">
                             </div>
                             <p class="help-block col-sm-4 red">* 必填</p>
                         </div>
 
-                        <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">管理员角色</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" id="password" placeholder="" name="password" required="" type="text">
-                            </div>
-                            <p class="help-block col-sm-4 red">* 必填</p>
-                        </div>  
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default">保存信息</button>

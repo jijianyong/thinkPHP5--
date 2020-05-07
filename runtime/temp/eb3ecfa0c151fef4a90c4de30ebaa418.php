@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\admin\edit.html";i:1588667704;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588575675;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\phpstudy_pro\WWW\tp5\public/../application/admin\view\cate\lst.html";i:1588859276;s:66:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\navbar.html";i:1588573745;s:64:"D:\phpstudy_pro\WWW\tp5\application\admin\view\comment\left.html";i:1588858088;}*/ ?>
 <!DOCTYPE html>
 <html><head>
 	    <meta charset="utf-8">
@@ -22,7 +22,7 @@
 </head>
 <body>
 	<!-- 头部 -->
-    <div class="navbar">
+	<div class="navbar">
     <div class="navbar-inner">
         <div class="navbar-container">
             <!-- Navbar Barnd -->
@@ -79,14 +79,12 @@
         </div>
     </div>
 </div>
-
-
 	<!-- /头部 -->
 	
 	<div class="main-container container-fluid">
 		<div class="page-container">
-			            <!-- Page Sidebar -->
-                        <div class="page-sidebar" id="sidebar">
+			<!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
     <!-- Page Sidebar Header-->
     <div class="sidebar-header-wrapper">
         <input class="searchinput" type="text">
@@ -133,6 +131,40 @@
 
         <li>
             <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-list"></i>
+                <span class="menu-text">栏目管理</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('Cate/lst'); ?>">
+                        <span class="menu-text">
+                            栏目列表                                   </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>                            
+        </li> 
+
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-link"></i>
+                <span class="menu-text">友情链接</span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="<?php echo url('links/lst'); ?>">
+                        <span class="menu-text">
+                            友情列表                                   </span>
+                        <i class="menu-expand"></i>
+                    </a>
+                </li>
+            </ul>                            
+        </li> 
+
+        <li>
+            <a href="#" class="menu-dropdown">
                 <i class="menu-icon fa fa-gear"></i>
                 <span class="menu-text">系统</span>
                 <i class="menu-expand"></i>
@@ -161,10 +193,7 @@
                                         <li>
                         <a href="#">系统</a>
                     </li>
-                                        <li>
-                        <a href=<?php echo url('admin/lst'); ?>>管理员管理</a>
-                    </li>
-                                        <li class="active">修改管理员</li>
+                                        <li class="active">栏目管理</li>
                                         </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -172,38 +201,43 @@
                 <!-- Page Body -->
                 <div class="page-body">
                     
+<button type="button" tooltip="添加栏目" class="btn btn-sm btn-azure btn-addon" onClick="javascript:window.location.href = '<?php echo url('cate/add'); ?>'"> <i class="fa fa-plus"></i> Add
+</button>
 <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12">
         <div class="widget">
-            <div class="widget-header bordered-bottom bordered-blue">
-                <span class="widget-caption">修改管理员</span>
-            </div>
             <div class="widget-body">
-                <div id="horizontal-form">
-                    <form class="form-horizontal" role="form" action="" method="post">
-                        <input type="hidden" name="id" value="<?php echo $admins['id']; ?>">
-                        <div class="form-group">
-                            <label for="username" class="col-sm-2 control-label no-padding-right">管理员名</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" id="username" placeholder="" name="username" value="<?php echo $admins['username']; ?>"  type="text">
-                            </div>
-                            <p class="help-block col-sm-4 red">* 必填</p>
-                        </div>
+                <div class="flip-scroll">
+                    <table class="table table-bordered table-hover">
+                        <thead class="">
+                            <tr>
+                                <th class="text-center" width="4%">ID</th>
+                                <th class="text-center">栏目名称</th>
+                                <th class="text-center" width="14%">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                            <tr>
+                                <td align="center"><?php echo $vo['id']; ?></td>
+                                <td align="center"><?php echo $vo['catename']; ?></td>
+                                <td align="center">
+                                    <a href="<?php echo url('cate/edit',array('id'=>$vo['id'])); ?>" class="btn btn-primary btn-sm shiny">
+                                        <i class="fa fa-edit"></i> 编辑
+                                    </a>
 
-                        <div class="form-group">
-                            <label for="group_id" class="col-sm-2 control-label no-padding-right">管理员角色</label>
-                            <div class="col-sm-6">
-                                <input class="form-control" id="password" placeholder="" name="password" type="text">
-                            </div>
-                            <p class="help-block col-sm-4 red">留空则保留原来的密码</p>
-                        </div>  
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-default">保存信息</button>
-                            </div>
-                        </div>
-                    </form>
+                                    <a href="#" onClick="warning('确实要删除吗','<?php echo url('cate/del',array('id'=>$vo['id'])); ?>')" class="btn btn-danger btn-sm shiny">
+                                        <i class="fa fa-trash-o"></i> 删除
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php endforeach; endif; else: echo "" ;endif; ?>
+                        </tbody>
+                    </table>
                 </div>
+                <div style="margin-top:10px;">
+                <?php echo $list->render(); ?>
+                	                </div>
             </div>
         </div>
     </div>
@@ -217,11 +251,15 @@
 	</div>
 
 	    <!--Basic Scripts-->
-    <script src="http://localhost/tp5/public/static/admin/style/jquery_002.js"></script>
-    <script src="http://localhost/tp5/public/static/admin/style/bootstrap.js"></script>
-    <script src="http://localhost/tp5/public/static/admin/style/jquery.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/jquery_002.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/bootstrap.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/jquery.js"></script>
     <!--Beyond Scripts-->
-    <script src="http://localhost/tp5/public/static/admin/style/beyond.js"></script>
+    <script src="http://localhost/tp5/public/static/admin
+/style/beyond.js"></script>
     
 
 
